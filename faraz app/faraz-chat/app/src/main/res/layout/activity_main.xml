@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0b141a">
+
+    <!-- ===== LOGIN PAGE ===== -->
+    <LinearLayout
+        android:id="@+id/loginPage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="#075e54"
+        android:padding="30dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="💬 Faraz Chat"
+            android:textColor="#FFFFFF"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="30dp" />
+
+        <ImageView
+            android:id="@+id/avatarPreview"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:background="#FFFFFF"
+            android:scaleType="centerCrop"
+            android:layout_marginBottom="20dp" />
+
+        <Button
+            android:id="@+id/pickImageBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="📷 Photo Chuno"
+            android:backgroundTint="#25d366"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="20dp" />
+
+        <EditText
+            android:id="@+id/usernameInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Apna naam daalo..."
+            android:textColorHint="#CCCCCC"
+            android:textColor="#FFFFFF"
+            android:background="#FFFFFF"
+            android:padding="15dp"
+            android:layout_marginBottom="15dp" />
+
+        <Button
+            android:id="@+id/loginBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Chat Shuru Karo"
+            android:backgroundTint="#25d366"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:padding="15dp" />
+    </LinearLayout>
+
+    <!-- ===== CHAT LIST PAGE ===== -->
+    <LinearLayout
+        android:id="@+id/chatListPage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <!-- Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#202c33"
+            android:padding="15dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="💬 Faraz Chat"
+                android:textColor="#25d366"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/myProfile"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="#25d366" />
+        </LinearLayout>
+
+        <!-- Search -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#111b21"
+            android:padding="10dp">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="🔍 Search chats..."
+                android:textColorHint="#8696a0"
+                android:textColor="#FFFFFF"
+                android:background="#202c33"
+                android:padding="10dp" />
+        </LinearLayout>
+
+        <!-- Chat List -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <LinearLayout
+                android:id="@+id/chatListContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+        </ScrollView>
+    </LinearLayout>
+
+    <!-- ===== CHAT PAGE ===== -->
+    <LinearLayout
+        android:id="@+id/chatPage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <!-- Chat Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#202c33"
+            android:padding="10dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/backBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="←"
+                android:textColor="#25d366"
+                android:textSize="24sp"
+                android:padding="10dp" />
+
+            <ImageView
+                android:id="@+id/chatAvatar"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="#25d366"
+                android:layout_marginEnd="10dp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/chatName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🟢 Online"
+                    android:textColor="#8696a0"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Messages -->
+        <ScrollView
+            android:id="@+id/messagesScroll"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="#0b141a"
+            android:padding="10dp">
+            <LinearLayout
+                android:id="@+id/messagesContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+        </ScrollView>
+
+        <!-- Input -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#202c33"
+            android:padding="10dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/messageInput"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Message likho..."
+                android:textColorHint="#8696a0"
+                android:textColor="#FFFFFF"
+                android:background="#2a3942"
+                android:padding="12dp"
+                android:layout_marginEnd="10dp" />
+
+            <Button
+                android:id="@+id/sendBtn"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text="➤"
+                android:backgroundTint="#25d366"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>
